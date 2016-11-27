@@ -1,40 +1,11 @@
+Профилирование пузырьковой сортировки (100,000 строк):
 Flat profile:
 
 Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls   s/call   s/call  name    
- 91.25    254.71   254.71 704982704     0.00     0.00  cmp
-  7.34    275.20    20.49        1    20.49   279.34  srt_bubble
-  1.48    279.34     4.13 2500734847     0.00     0.00  swp
-  0.24    279.99     0.66                             srt_quick
-  0.02    280.06     0.07                             main
-
-			Call graph
-
-
-granularity: each sample hit covers 2 byte(s) for 0.00% of 280.06 seconds
-
-index % time    self  children    called     name
-                                                 <spontaneous>
-[1]     99.8    0.07  279.34                 main [1]
-               20.49  258.85       1/1           srt_bubble [2]
------------------------------------------------
-               20.49  258.85       1/1           main [1]
-[2]     99.7   20.49  258.85       1         srt_bubble [2]
-              254.71    0.00 704982704/704982704     cmp [3]
-                4.13    0.00 2500734847/2500734847     swp [4]
------------------------------------------------
-              254.71    0.00 704982704/704982704     srt_bubble [2]
-[3]     91.0  254.71    0.00 704982704         cmp [3]
------------------------------------------------
-                4.13    0.00 2500734847/2500734847     srt_bubble [2]
-[4]      1.5    4.13    0.00 2500734847         swp [4]
------------------------------------------------
-                                                 <spontaneous>
-[5]      0.2    0.66    0.00                 srt_quick [5]
------------------------------------------------
-
-Index by function name
-
-   [3] cmp                     [2] srt_bubble              [4] swp
-   [1] main                    [5] srt_quick
+     %  cumulative      self                 self     total           
+  time     seconds   seconds       calls   s/call    s/call  name    
+ 91.25      254.71    254.71   704982704     0.00      0.00  cmp
+  7.34      275.20     20.49           1    20.49    279.34  srt_bubble
+  1.48      279.34      4.13  2500734847     0.00      0.00  swp
+  0.24      279.99      0.66                                 srt_quick
+  0.02      280.06      0.07                                 main
