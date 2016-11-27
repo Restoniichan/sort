@@ -1,43 +1,11 @@
+Профилирование быстрой сортировки (500000 строк):
 Flat profile:
 
 Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
- 70.34      0.65     0.65 13100737     0.00     0.00  cmp
- 23.45      0.86     0.22                             main
-  3.27      0.89     0.03   499999     0.00     0.00  part
-  1.64      0.91     0.02  2210977     0.00     0.00  swp
-  1.09      0.92     0.01        1    10.03   702.34  srt_quick
-
-			Call graph
-
-
-granularity: each sample hit covers 2 byte(s) for 1.09% of 0.92 seconds
-
-index % time    self  children    called     name
-                                                 <spontaneous>
-[1]    100.0    0.22    0.70                 main [1]
-                0.01    0.69       1/1           srt_quick [2]
------------------------------------------------
-                              999998             srt_quick [2]
-                0.01    0.69       1/1           main [1]
-[2]     76.5    0.01    0.69       1+999998  srt_quick [2]
-                0.03    0.66  499999/499999      part [3]
-                              999998             srt_quick [2]
------------------------------------------------
-                0.03    0.66  499999/499999      srt_quick [2]
-[3]     75.4    0.03    0.66  499999         part [3]
-                0.65    0.00 13100737/13100737     cmp [4]
-                0.02    0.00 2210977/2210977     swp [5]
------------------------------------------------
-                0.65    0.00 13100737/13100737     part [3]
-[4]     70.5    0.65    0.00 13100737         cmp [4]
------------------------------------------------
-                0.02    0.00 2210977/2210977     part [3]
-[5]      1.6    0.02    0.00 2210977         swp [5]
------------------------------------------------
-
-Index by function name
-
-   [4] cmp                     [3] part                    [5] swp
-   [1] main                    [2] srt_quick
+     %   cumulative      self               self    total           
+  time      seconds   seconds     calls  ms/call  ms/call  name    
+ 70.34         0.65      0.65  13100737     0.00     0.00  cmp
+ 23.45         0.86      0.22                              main
+  3.27         0.89      0.03    499999     0.00     0.00  part
+  1.64         0.91      0.02   2210977     0.00     0.00  swp
+  1.09         0.92      0.01         1    10.03   702.34  srt_quick
