@@ -1,40 +1,11 @@
+Профилирование сортировки вставками (100,000 строк):
 Flat profile:
 
 Each sample counts as 0.01 seconds.
-  %   cumulative   self              self     total           
- time   seconds   seconds    calls   s/call   s/call  name    
- 88.95    101.10   101.10 2500834834     0.00     0.00  cmp
-  7.24    109.32     8.23        1     8.23   113.54  srt_insert
-  3.71    113.54     4.21 2500734847     0.00     0.00  swp
-  0.40    113.99     0.45                             srt_quick
-  0.04    114.03     0.04                             main
-
-			Call graph
-
-
-granularity: each sample hit covers 2 byte(s) for 0.01% of 114.03 seconds
-
-index % time    self  children    called     name
-                                                 <spontaneous>
-[1]     99.6    0.04  113.54                 main [1]
-                8.23  105.31       1/1           srt_insert [2]
------------------------------------------------
-                8.23  105.31       1/1           main [1]
-[2]     99.6    8.23  105.31       1         srt_insert [2]
-              101.10    0.00 2500834834/2500834834     cmp [3]
-                4.21    0.00 2500734847/2500734847     swp [4]
------------------------------------------------
-              101.10    0.00 2500834834/2500834834     srt_insert [2]
-[3]     88.7  101.10    0.00 2500834834         cmp [3]
------------------------------------------------
-                4.21    0.00 2500734847/2500734847     srt_insert [2]
-[4]      3.7    4.21    0.00 2500734847         swp [4]
------------------------------------------------
-                                                 <spontaneous>
-[5]      0.4    0.45    0.00                 srt_quick [5]
------------------------------------------------
-
-Index by function name
-
-   [3] cmp                     [2] srt_insert              [4] swp
-   [1] main                    [5] srt_quick
+     %  cumulative      self                 self     total           
+  time     seconds   seconds       calls   s/call    s/call  name    
+ 88.95      101.10    101.10  2500834834     0.00      0.00  cmp
+  7.24      109.32      8.23           1     8.23    113.54  srt_insert
+  3.71      113.54      4.21  2500734847     0.00      0.00  swp
+  0.40      113.99      0.45                                 srt_quick
+  0.04      114.03      0.04                                 main
