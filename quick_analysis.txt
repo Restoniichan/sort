@@ -1,0 +1,43 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 78.52      0.18     0.18  2292558     0.00     0.00  cmp
+ 19.63      0.23     0.05                             main
+  0.00      0.23     0.00   387713     0.00     0.00  swp
+  0.00      0.23     0.00    99999     0.00     0.00  part
+  0.00      0.23     0.00        1     0.00   180.60  srt_quick
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 4.43% of 0.23 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.05    0.18                 main [1]
+                0.00    0.18       1/1           srt_quick [4]
+-----------------------------------------------
+                0.18    0.00 2292558/2292558     part [3]
+[2]     80.0    0.18    0.00 2292558         cmp [2]
+-----------------------------------------------
+                0.00    0.18   99999/99999       srt_quick [4]
+[3]     80.0    0.00    0.18   99999         part [3]
+                0.18    0.00 2292558/2292558     cmp [2]
+                0.00    0.00  387713/387713      swp [5]
+-----------------------------------------------
+                              199998             srt_quick [4]
+                0.00    0.18       1/1           main [1]
+[4]     80.0    0.00    0.18       1+199998  srt_quick [4]
+                0.00    0.18   99999/99999       part [3]
+                              199998             srt_quick [4]
+-----------------------------------------------
+                0.00    0.00  387713/387713      part [3]
+[5]      0.0    0.00    0.00  387713         swp [5]
+-----------------------------------------------
+
+Index by function name
+
+   [2] cmp                     [3] part                    [5] swp
+   [1] main                    [4] srt_quick
