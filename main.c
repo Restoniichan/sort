@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
     //Вывод отсортированного массива
     printf("Here's your sorted array:\n");
     for(i = 0; i < strs_amnt; ++i) {
-        //printf("%d) %s\n", i+1, strs[i]);
+        printf("%d) %s\n", i+1, strs[i]);
         free(strs[i]);
     }
     free(strs);
